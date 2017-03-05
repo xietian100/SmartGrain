@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="smartgrain.com.MainActivity">
+    <FrameLayout
+        android:id="@+id/fm_contain"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        ></FrameLayout>
+
+    <RadioGroup
+        android:id="@+id/rg_main_activity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:background="@drawable/bottom_bg"
+        android:orientation="horizontal"
+        >
+        <RadioButton
+            android:id="@+id/rb_news"
+
+            style="@style/BottomTagStyle"
+            android:drawableTop="@drawable/news_selector"
+            android:text="新闻"
+
+            />
+        <RadioButton
+            android:id="@+id/rb_datas"
+            style="@style/BottomTagStyle"
+            android:drawableTop="@drawable/data_selector"
+            android:text="数据"
+            />
+        <RadioButton
+            android:id="@+id/rb_tech"
+            style="@style/BottomTagStyle"
+            android:drawableTop="@drawable/rec_selector"
+            android:text="技术"
+            />
+
+        <RadioButton
+            android:id="@+id/rb_mine"
+            style="@style/BottomTagStyle"
+            android:drawableTop="@drawable/mine_selector"
+            android:text="我"
+            />
+
+    </RadioGroup>
+
+
+</LinearLayout>
