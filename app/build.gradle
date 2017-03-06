@@ -34,4 +34,6 @@ dependencies {
     compile project(':pullToRefreshlibrary')
     compile 'io.github.openfeign:feign-gson:9.4.0'
     compile project(':banner')
+    compile 'org.greenrobot:eventbus:3.0.0'
+    compile 'com.android.support.test.espresso:espresso-core:2.2.2'
 }

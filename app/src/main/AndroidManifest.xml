@@ -21,7 +21,9 @@
         <service
             android:name=".date.service.DateService"
             android:enabled="true"
-            android:exported="true"></service>
+            android:exported="true" />
+
+        <activity android:name=".date.activity.TransactionList"></activity>
     </application>
 
 </manifest>
