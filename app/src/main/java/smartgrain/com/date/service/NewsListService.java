@@ -1,5 +1,6 @@
 package smartgrain.com.date.service;
 
+import android.app.IntentService;
 import android.app.Service;
 import android.content.Intent;
 import android.os.IBinder;
@@ -17,8 +18,8 @@ import java.util.List;
 
 import smartgrain.com.date.bean.Transaction;
 
-public class DateService extends Service {
-    private static final String TAG = "DateService";
+public class NewsListService extends IntentService {
+    private static final String TAG = "NewsListService";
     private List<Transaction> transactions;
 
     /*
@@ -35,30 +36,23 @@ public class DateService extends Service {
     * */
     private List<String> dataList;
 
-    public DateService() {
+    public NewsListService() {
+        super("NewsDetailService");
+    }
+
+    public NewsListService(String name) {
+        super(name);
     }
 
     @Override
-    public IBinder onBind(Intent intent) {
-        // TODO: Return the communication channel to the service.
-        throw new UnsupportedOperationException("Not yet implemented");
-    }
-
-    @Override
-    public void onCreate() {
-        super.onCreate();
-        /*
+    protected void onHandleIntent(Intent intent) {
+          /*
         * 开启子线程抓取新闻标题页面
         * 得到title
         * 得到url
         * 得到data
         * */
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                grabNewsList();
-            }
-        }).start();
+        grabNewsList();
     }
 
     private void grabNewsList() {
@@ -86,9 +80,9 @@ public class DateService extends Service {
                 i++;
                 String text = td.text();
                 if (((i%2)==1)){
-                    titleList.add(text);
-                }else {
                     dataList.add(text);
+                }else {
+                    titleList.add(text);
                 }
             }
             /*
@@ -111,6 +105,9 @@ public class DateService extends Service {
     }
 
 
-
-
+    @Override
+    public void onDestroy() {
+        Log.e(TAG,"NewsListServce over");
+        super.onDestroy();
+    }
 }

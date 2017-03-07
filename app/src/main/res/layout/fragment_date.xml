@@ -35,6 +35,7 @@
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/notice"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -49,7 +50,7 @@
             android:layout_height="24dp" />
         <TextView
             android:id="@+id/transaction"
-            android:text="交易公告"
+            android:text="交易通知"
             android:textSize="18sp"
             android:layout_marginLeft="12dp"
             android:layout_width="match_parent"

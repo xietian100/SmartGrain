@@ -13,8 +13,9 @@ import org.greenrobot.eventbus.EventBus;
 
 import smartgrain.com.R;
 import smartgrain.com.base.BaseFragment;
+import smartgrain.com.date.activity.NoticeActivity;
 import smartgrain.com.date.activity.TransactionList;
-import smartgrain.com.date.service.DateService;
+import smartgrain.com.date.service.NewsListService;
 
 /**
  * Created by pc on 2017/3/1.
@@ -24,6 +25,7 @@ public class DateFragment extends BaseFragment implements View.OnClickListener {
     public static final String TAG = "DateFragment";
     private Toolbar toolbar;
     private LinearLayout item_transaction;
+    private LinearLayout item_notice;
 
     @Override
     public View initView() {
@@ -33,6 +35,9 @@ public class DateFragment extends BaseFragment implements View.OnClickListener {
         toolbar.setTitleTextColor(Color.WHITE);
         item_transaction= (LinearLayout) view.findViewById(R.id.item_transaction);
         item_transaction.setOnClickListener(this);
+
+        item_notice= (LinearLayout) view.findViewById(R.id.notice);
+        item_notice.setOnClickListener(this);
         return view;
     }
 
@@ -41,7 +46,7 @@ public class DateFragment extends BaseFragment implements View.OnClickListener {
         /*
         * 开启后台服务，获取交易列表
         * */
-        Intent intent =new Intent(mContext,DateService.class);
+        Intent intent =new Intent(mContext,NewsListService.class);
         getActivity().startService(intent);
     }
 
@@ -58,6 +63,9 @@ public class DateFragment extends BaseFragment implements View.OnClickListener {
             case R.id.item_transaction:
                 Intent intent =new Intent(getActivity(),TransactionList.class);
                 getActivity().startActivity(intent);
+            case R.id.notice:
+                Intent intent1 =new Intent(getActivity(),NoticeActivity.class);
+                getActivity().startActivity(intent1);
         }
     }
 }

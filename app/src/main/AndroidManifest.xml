@@ -19,11 +19,22 @@
         </activity>
 
         <service
-            android:name=".date.service.DateService"
+            android:name=".date.service.NewsListService"
             android:enabled="true"
             android:exported="true" />
 
-        <activity android:name=".date.activity.TransactionList"></activity>
+        <activity android:name=".date.activity.TransactionList" />
+        <activity android:name=".date.activity.TransactionDeatilActivity" />
+
+        <service
+            android:name=".date.service.NewsDetailService"
+            android:exported="false" />
+
+        <activity android:name=".date.activity.NoticeActivity" />
+
+        <service
+            android:name=".date.service.NoticeService"
+            android:exported="false"></service>
     </application>
 
 </manifest>
