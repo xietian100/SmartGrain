@@ -25,16 +25,18 @@
 
         <activity android:name=".date.activity.TransactionList" />
         <activity android:name=".date.activity.TransactionDeatilActivity" />
+        <activity android:name=".date.activity.NoticeActivity" />
+        <activity android:name=".date.activity.SeeActivity"></activity>
+
 
         <service
             android:name=".date.service.NewsDetailService"
             android:exported="false" />
 
-        <activity android:name=".date.activity.NoticeActivity" />
-
         <service
             android:name=".date.service.NoticeService"
             android:exported="false"></service>
+        <service android:name=".date.service.SeeService"></service>
     </application>
 
 </manifest>

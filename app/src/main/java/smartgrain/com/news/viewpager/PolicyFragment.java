@@ -24,7 +24,7 @@ public class PolicyFragment extends ViewPageBaseFragment {
     }
 
     @Override
-    View initView() {
+    public View initView() {
 
         textView = new TextView(mContext);
         textView.setTextColor(Color.RED);
@@ -34,7 +34,7 @@ public class PolicyFragment extends ViewPageBaseFragment {
     }
 
     @Override
-    protected void initDate() {
+    public  void initDate() {
         textView.setText("政策");
 
     }

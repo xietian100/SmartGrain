@@ -98,6 +98,7 @@ public class NewsListService extends IntentService {
                 transactions.add(transaction);
             }
             EventBus.getDefault().postSticky(transactions);
+            EventBus.getDefault().post(transactions);
 
         } catch (IOException e) {
             e.printStackTrace();

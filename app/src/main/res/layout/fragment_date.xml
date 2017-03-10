@@ -11,53 +11,29 @@
         android:background="?attr/colorPrimary"
         app:title="@string/app_name"
         app:titleTextColor="#ffffff" />
-    <LinearLayout
+
+    <smartgrain.com.date.view.TaobaoHeadline
         android:id="@+id/item_transaction"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginTop="4dp"
-        >
-        <ImageView
-            android:background="@drawable/icon"
-            android:layout_width="24dp"
-            android:layout_height="24dp" />
-        <TextView
-            android:text="交易公告"
-            android:textSize="18sp"
-            android:layout_marginLeft="12dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+        android:layout_height="@dimen/headline_height"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="10dp"
+        />
 
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/notice"
+    <smartgrain.com.date.view.TaobaoHeadline
+        android:id="@+id/itenm_notice"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginTop="4dp"
-        >
-        <ImageView
-            android:background="@drawable/icon"
-            android:layout_width="24dp"
-            android:layout_height="24dp" />
-        <TextView
-            android:id="@+id/transaction"
-            android:text="交易通知"
-            android:textSize="18sp"
-            android:layout_marginLeft="12dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+        android:layout_height="@dimen/headline_height"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="10dp"
+        />
 
-    </LinearLayout>
-
+    <smartgrain.com.date.view.TaobaoHeadline
+        android:id="@+id/itenm_see1"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/headline_height"
+        android:layout_centerInParent="true"
+        />
 
 
 </LinearLayout>

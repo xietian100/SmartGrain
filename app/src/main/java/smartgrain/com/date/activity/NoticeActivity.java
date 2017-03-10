@@ -26,8 +26,10 @@ import java.util.List;
 
 import smartgrain.com.R;
 import smartgrain.com.date.adapter.NoticeListViewAdapter;
+import smartgrain.com.date.bean.HeadlineBean;
 import smartgrain.com.date.service.NewsDetailService;
 import smartgrain.com.date.service.NoticeService;
+import smartgrain.com.date.view.TaobaoHeadline;
 
 
 public class NoticeActivity extends Activity {
@@ -38,6 +40,8 @@ public class NoticeActivity extends Activity {
     private List<NoticeService.Notice> notices;
 
     private NoticeListViewAdapter adapter;
+
+
 
 
     @Override
@@ -52,6 +56,7 @@ public class NoticeActivity extends Activity {
 
         mListView= (ListView) findViewById(R.id.mListView);
         Intent intent= new Intent(NoticeActivity.this, NoticeService.class);
+
         startService(intent);
     }
 

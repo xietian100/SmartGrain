@@ -25,7 +25,7 @@ public class BroadCastFragment extends ViewPageBaseFragment {
     }
 
     @Override
-    View initView() {
+    public View initView() {
 
         textView = new TextView(mContext);
         textView.setTextColor(Color.RED);
@@ -35,7 +35,7 @@ public class BroadCastFragment extends ViewPageBaseFragment {
     }
 
     @Override
-    protected void initDate() {
+    public void initDate() {
         textView.setText("联播");
 
     }

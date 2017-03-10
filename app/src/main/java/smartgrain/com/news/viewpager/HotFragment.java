@@ -70,7 +70,7 @@ public class HotFragment extends ViewPageBaseFragment {
 
 
     @Override
-    View initView() {
+    public View initView() {
         View view = View.inflate(mContext, R.layout.fragment_news_hot, null);
         banner = (Banner) view.findViewById(R.id.banner);
         listview = (PullToRefreshListView) view.findViewById(R.id.mListView);
@@ -78,7 +78,7 @@ public class HotFragment extends ViewPageBaseFragment {
     }
 
     @Override
-    protected void initDate() {
+    public  void initDate() {
         NetUtils.getDateFromNet(Constans.SN_URL,
                 new NetUtils.GetJsonSucced() {
                     @Override

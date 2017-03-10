@@ -95,8 +95,17 @@ public class NoticeService extends IntentService {
         }
 
         String product;
-            String time1;
-            String time2;
+        String time1;
+        String time2;
+
+        @Override
+        public String toString() {
+            return  location + '|' +
+                     product + '|' +
+                    time1 + '|'+
+                    time2 + '|'
+                    ;
+        }
     }
 
 

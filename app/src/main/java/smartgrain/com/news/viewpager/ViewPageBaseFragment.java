@@ -63,7 +63,7 @@ public  abstract class ViewPageBaseFragment extends Fragment {
         return initView();
     }
 
-     abstract View initView() ;
+     public abstract View initView() ;
 
     /**
      * 绑定数据
@@ -75,5 +75,5 @@ public  abstract class ViewPageBaseFragment extends Fragment {
         initDate();
     }
 
-    protected abstract void initDate();
+    public abstract void initDate();
 }
