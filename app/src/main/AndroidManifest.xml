@@ -27,6 +27,7 @@
         <activity android:name=".date.activity.TransactionDeatilActivity" />
         <activity android:name=".date.activity.NoticeActivity" />
         <activity android:name=".date.activity.SeeActivity"></activity>
+        <activity android:name=".tech.activity.TechDetailActivity"></activity>
 
 
         <service

@@ -58,11 +58,12 @@ public class TransactionDeatilActivity extends Activity {
 
         EventBus.getDefault().register(this);
 
-        Intent intent= new Intent(TransactionDeatilActivity.this, NewsDetailService.class);
-        intent.putExtra("url",url);
-        startService(intent);
-    }
 
+    Intent intent= new Intent(TransactionDeatilActivity.this, NewsDetailService.class);
+    intent.putExtra("url",url);
+        Log.e(TAG,url);
+    startService(intent);
+}
 
 
     @Override
@@ -73,7 +74,9 @@ public class TransactionDeatilActivity extends Activity {
 
     @Subscribe(threadMode = ThreadMode.MAIN)
     public void handleEvent(final NewsDetailService.NewsDetail event) {
+
         content.setText(event.getNewsDetail());
+
         if(event.getQingdan_url()!=null){
             download.setVisibility(View.VISIBLE);
             download.setOnClickListener(new View.OnClickListener() {

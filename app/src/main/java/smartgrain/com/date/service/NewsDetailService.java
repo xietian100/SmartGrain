@@ -46,18 +46,24 @@ public class NewsDetailService extends IntentService {
         Log.e(TAG, "NewsDetailService BEAIN");
         try {
             Document doc = Jsoup.connect(url).timeout(5000).post();
+
+             /*
+            * 获取交易清单下载地址
+            * */
             Document content = Jsoup.parse(doc.toString());
-
-
             String qingdan_url = content.select("a").select("[href*=xls]").attr("href");
+            Log.e(TAG,"qingdan_url"+qingdan_url);
 
-            String span = content.select("span").select("[style*= FONT-SIZE: 14pt]").text();
 
-            Log.e(TAG, span);
+            Elements span = content.select("span").select("[style*= FONT-SIZE: 14pt]");
+            String text = span.toString();
+
+
+            Log.e(TAG, "span"+text);
 
 
             NewsDetail newsDetail=new NewsDetail();
-            newsDetail.setNewsDetail(span);
+            newsDetail.setNewsDetail(text.toString());
             newsDetail.setQingdan_url(qingdan_url);
 
             EventBus.getDefault().post(newsDetail);

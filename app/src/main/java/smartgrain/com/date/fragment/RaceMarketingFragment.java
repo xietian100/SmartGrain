@@ -54,21 +54,28 @@ public class RaceMarketingFragment extends ViewPageBaseFragment {
         NetUtils.getDateFromNet(url, new NetUtils.GetJsonSucced() {
             @Override
             public void getResponse(String response) {
-                response = response.replace("[", "");
-                response = response.replace("]", "");
-                response = response.replace("", "");
-                response = response.replace("]", "");
-                response = response.replace("\"", "");
-                String[] sa = response.split(",");
-                s = sa[0];
-                jiedian = sa[3];
-                name.setText(sa[1]);
-                matket.setText(allRaceMarketing.getName());
-                jie.setText(sa[3]);
-                state.setText(sa[2]);
-                getRaceTacheDetail(s,jiedian);
+                if(!response.equals("null")){
+                    Log.e(TAG,response);
+                    parseJson(response);
+                }
             }
         });
+    }
+
+    private void parseJson(String response) {
+        response = response.replace("[", "");
+        response = response.replace("]", "");
+        response = response.replace("", "");
+        response = response.replace("]", "");
+        response = response.replace("\"", "");
+        String[] sa = response.split(",");
+        s = sa[0];
+        jiedian = sa[3];
+        name.setText(sa[1]);
+        matket.setText(allRaceMarketing.getName());
+        jie.setText(sa[3]);
+        state.setText(sa[2]);
+        getRaceTacheDetail(s,jiedian);
     }
 
     public void getRaceTacheDetail(String s,String jiedian) {

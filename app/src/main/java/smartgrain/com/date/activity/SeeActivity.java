@@ -45,7 +45,7 @@ public class SeeActivity extends FragmentActivity {
         toolbar.setTitle("交易观摩");
         toolbar.setTitleTextColor(Color.WHITE);
 
-        Intent intent =new Intent(SeeActivity.this, SeeService.class);
+        Intent intent = new Intent(SeeActivity.this, SeeService.class);
         startService(intent);
 
         EventBus.getDefault().register(this);
@@ -56,8 +56,8 @@ public class SeeActivity extends FragmentActivity {
 
 
     private void initView() {
-        mTab= (TabLayout) findViewById(R.id.mTab);
-        mViewPager= (ViewPager) findViewById(R.id.mViewPager);
+        mTab = (TabLayout) findViewById(R.id.mTab);
+        mViewPager = (ViewPager) findViewById(R.id.mViewPager);
         mTab.setupWithViewPager(mViewPager);
     }
 
@@ -68,29 +68,26 @@ public class SeeActivity extends FragmentActivity {
         super.onDestroy();
     }
 
-    @Subscribe(threadMode=ThreadMode.MAIN)
-    public  void AllRaceMarketing(AllRaceMarketing allRaceMarketing ) {
-       mTab.addTab(mTab.newTab().setText(allRaceMarketing.getName()));
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    public void AllRaceMarketing(AllRaceMarketing allRaceMarketing) {
+        mTab.addTab(mTab.newTab().setText(allRaceMarketing.getName()));
 
-        if(fragments == null){
-            fragments= new ArrayList<>();
-            RaceMarketingFragment raceMarketingFragment =new RaceMarketingFragment(allRaceMarketing);
+        if (fragments == null) {
+            fragments = new ArrayList<>();
+            RaceMarketingFragment raceMarketingFragment = new RaceMarketingFragment(allRaceMarketing);
             fragments.add(raceMarketingFragment);
-        }else {
-            RaceMarketingFragment raceMarketingFragment =new RaceMarketingFragment(allRaceMarketing);
+        } else {
+            RaceMarketingFragment raceMarketingFragment = new RaceMarketingFragment(allRaceMarketing);
             fragments.add(raceMarketingFragment);
         }
 
-        if(raceMarketingAdapter == null){
-            raceMarketingAdapter =new RaceMarketingAdapter(getSupportFragmentManager(),fragments);
+        if (raceMarketingAdapter == null) {
+            raceMarketingAdapter = new RaceMarketingAdapter(getSupportFragmentManager(), fragments);
             mViewPager.setAdapter(raceMarketingAdapter);
-        }else {
+        } else {
             raceMarketingAdapter.notifyDataSetChanged();
         }
     }
-    
-
-    
 
 
 }
