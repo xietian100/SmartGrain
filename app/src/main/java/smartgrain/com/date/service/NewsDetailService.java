@@ -55,15 +55,15 @@ public class NewsDetailService extends IntentService {
             Log.e(TAG,"qingdan_url"+qingdan_url);
 
 
-            Elements span = content.select("span").select("[style*= FONT-SIZE: 14pt]");
-            String text = span.toString();
+            Elements span = content.select("span").select("[style*= FONT-SIZE: 18px]");
+            String text = span.html();
 
 
+//            Log.e(TAG, "span"+text);
             Log.e(TAG, "span"+text);
 
-
             NewsDetail newsDetail=new NewsDetail();
-            newsDetail.setNewsDetail(text.toString());
+            newsDetail.setNewsDetail(text);
             newsDetail.setQingdan_url(qingdan_url);
 
             EventBus.getDefault().post(newsDetail);

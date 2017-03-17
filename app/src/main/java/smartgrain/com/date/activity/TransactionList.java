@@ -43,10 +43,6 @@ public class TransactionList extends Activity {
         ininListView(transactions);
     }
 
-
-
-
-
     private void ininListView(final List<Transaction> transactions) {
         adapter=new TransactionListViewAdapter(getApplication().getApplicationContext(),transactions);
         transactionListView.setAdapter(adapter);

@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.Toolbar;
+import android.text.Html;
 import android.util.Log;
 
 import android.view.View;
@@ -75,7 +76,7 @@ public class TransactionDeatilActivity extends Activity {
     @Subscribe(threadMode = ThreadMode.MAIN)
     public void handleEvent(final NewsDetailService.NewsDetail event) {
 
-        content.setText(event.getNewsDetail());
+        content.setText(Html.fromHtml(event.getNewsDetail()));
 
         if(event.getQingdan_url()!=null){
             download.setVisibility(View.VISIBLE);

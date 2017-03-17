@@ -4,7 +4,6 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentTransaction;
-import android.support.v7.app.AppCompatActivity;
 import android.widget.FrameLayout;
 import android.widget.RadioGroup;
 
@@ -14,7 +13,7 @@ import java.util.ArrayList;
 import smartgrain.com.R;
 import smartgrain.com.base.BaseFragment;
 import smartgrain.com.date.fragment.DateFragment;
-import smartgrain.com.mine.fragment.MineFragment;
+import smartgrain.com.weather.fragment.WeatherFragment;
 import smartgrain.com.news.fragment.NewsFragment;
 import smartgrain.com.tech.fragment.TechFragment;
 
@@ -74,7 +73,7 @@ public class MainActivity extends FragmentActivity {
         fragments.add(new NewsFragment());
         fragments.add(new DateFragment());
         fragments.add(new TechFragment());
-        fragments.add(new MineFragment());
+        fragments.add(new WeatherFragment());
 
     }
     private BaseFragment getFragment(int position) {
