@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import smartgrain.com.R;
+import smartgrain.com.weather.bean.WeatherForecast;
 
 
 /**
@@ -22,16 +23,15 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter {
 
 
     private final LayoutInflater layoutInflater;
-    private ArrayList<String> list;
+    private final List<WeatherForecast> itemlist;
 
-    public RecyclerViewAdapter(Context mContext) {
-        list=new ArrayList<>();
-        list.add("天气公报");
-        list.add("1-7天降水预报");
-        list.add("1-7天气温预报");
-        list.add("天气公报");
-        layoutInflater = LayoutInflater.from(mContext);
-    }
+
+    public RecyclerViewAdapter(Context mContext,List<WeatherForecast> itemlist) {
+    layoutInflater = LayoutInflater.from(mContext);
+        this.itemlist=itemlist;
+}
+
+
 
 
     @Override
@@ -43,13 +43,13 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter {
 
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
-        ((itemViewHolder)holder).title.setText(list.get(position));
+        ((itemViewHolder)holder).title.setText(itemlist.get(position).getName());
 
     }
 
     @Override
     public int getItemCount() {
-        return list.size();
+        return itemlist.size();
     }
 
     class itemViewHolder extends RecyclerView.ViewHolder{
